@@ -8,24 +8,35 @@
   <link rel="icon" href="logo.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script>
+    function validateSignUpForm() {
+        var fullName = document.getElementById('fullName').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (fullName === '' || email === '' || password === '' || confirmPassword === '') {
+            alert('Please fill in all required fields.');
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Password and Confirm Password do not match.');
+            return false;
+        }
+
+        window.location.href = "confirmation.html";
+
+        
+        return false;
+    }
+</script>
+  <script>
     function showConfirmation(event) {
-      event.preventDefault(); 
-
-      var fullName = document.getElementById("fullName").value;
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
-      var confirmPassword = document.getElementById("confirmPassword").value;
-
-      
-      var hasExistingAccount = email.includes("existinguser");
-
-      if (hasExistingAccount) {
         
-        window.open("login.html", "_blank");
-      } else {
+        event.preventDefault();
+
         
-        window.open("confirmation.html?fullName=" + encodeURIComponent(fullName) + "&email=" + encodeURIComponent(email), "_blank");
-      }
+        window.location.href = "confirmation.html";
     }
   </script>
   <script>
@@ -37,6 +48,25 @@
         window.location.href = "successfully.html";
     }
 </script>
+<script>
+  function validateForm() {
+      var name = document.getElementById('name').value;
+      var contactNumber = document.getElementById('contactNumber').value;
+      var purpose = document.getElementById('purpose').value;
+      var depart = document.getElementById('depart').value;
+
+      if (name === '' || contactNumber === '' || purpose === '' || depart === '') {
+          alert('Please fill in all required fields.');
+          return false;
+      }
+
+       // Redirect to successfully.html upon successful validation
+       window.location.href = 'successfully.html';
+
+      return false; 
+  }
+</script>
+
 
   <style>
 
@@ -322,6 +352,16 @@
     #about a:hover {
         text-decoration: underline;
     }
+    .box {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .title {
+        font-weight: bold;
+    }
+    .center-button {
+        text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -357,37 +397,37 @@
     </div>
   </section>
   <hr>
-  <section class="py-5 bg-light">
-    <div class="container" id="login">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <h2 class="mb-4 text-center" id="account">Create an Account</h2>
-          <form onsubmit="showConfirmation(event)">
-            <div class="mb-3">
-              <label for="fullName" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="fullName" placeholder="Mia Charife M. Obejo">
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-            </div>
-            <button type="submit" class="btn btn-primary w-100 align-items-center">Sign Up</button>
-          </form>
-          <div class="mt-3 text-center">
-            <p>Already have an account? <a href="login.html">Log In</a></p>
+    <section class="py-5 bg-light">
+      <div class="container" id="login">
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <h2 class="mb-4 text-center" id="account">Create an Account</h2>
+                  <form onsubmit="return validateSignUpForm()">
+                      <div class="mb-3">
+                          <label for="fullName" class="form-label">Full Name</label>
+                          <input type="text" class="form-control" id="fullName" placeholder="Mia Charife M. Obejo" required>
+                      </div>
+                      <div class="mb-3">
+                          <label for="email" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                      </div>
+                      <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="password" placeholder="Password" required>
+                      </div>
+                      <div class="mb-3">
+                          <label for="confirmPassword" class="form-label">Confirm Password</label>
+                          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary w-100 align-items-center">Sign Up</button>
+                  </form>
+                  <div class="mt-3 text-center">
+                      <p>Already have an account? <a href="login.html">Log In</a></p>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!--Main-->
     <section>
@@ -426,31 +466,31 @@
                   <div class="container" id="registration">
                       <div class="row justify-content-center">
                           <div class="col-md-6">
-                              <form class="box" action="example.php" method="post" onsubmit="showConfirmation(event)">
-                                  <div>
-                                      <label for="name" class="title">Name:</label>
-                                      <input type="text" id="name" name="name">
-                                  </div>
-                                  <div>
-                                      <label for="contactNumber">Contact Number:</label>
-                                      <input type="text" name="contactNumber">
-                                  </div>
-                                  <div>
-                                      <label for="purpose">Appointment Purpose:</label>
-                                      <select id="purpose" name="purpose" required>
-                                          <option value="certificate">Certificate of Indigency</option>
-                                          <option value="barangay">Barangay Clearance</option>
-                                          <option value="others">Others</option>
-                                      </select>
-                                  </div>
-                                  <div>
-                                      <label for="username">Date:</label>
-                                      <input type="date" name="depart">
-                                  </div>
-                                  <div class="center-button">
-                                      <input type="submit" value="Register" id="submit">
-                                  </div>
-                              </form>
+                            <form class="box" action="example.php" method="post" onsubmit="return validateForm()">
+                              <div>
+                                  <label for="name" class="title">Name:</label>
+                                  <input type="text" id="name" name="name" required>
+                              </div>
+                              <div>
+                                  <label for="contactNumber" class="title">Contact Number:</label>
+                                  <input type="text" id="contactNumber" name="contactNumber" required>
+                              </div>
+                              <div>
+                                  <label for="purpose" class="title">Appointment Purpose:</label>
+                                  <select id="purpose" name="purpose" required>
+                                      <option value="certificate">Certificate of Indigency</option>
+                                      <option value="barangay">Barangay Clearance</option>
+                                      <option value="others">Others</option>
+                                  </select>
+                              </div>
+                              <div>
+                                  <label for="depart" class="title">Date:</label>
+                                  <input type="date" id="depart" name="depart" required>
+                              </div>
+                              <div class="center-button">
+                                  <input type="submit" value="Register" id="submit">
+                              </div>
+                          </form>
                           </div>
                       </div>
                   </div>
@@ -548,5 +588,11 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

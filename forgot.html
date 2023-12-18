@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Forgot Password</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Forgot Password</h3>
+                </div>
+                <div class="card-body">
+                    <form id="forgotPasswordForm" onsubmit="return validateForgotPasswordForm();">
+                        <div class="form-group">
+                            <label for="forgotPasswordEmail">Email Address</label>
+                            <input type="email" class="form-control" id="forgotPasswordEmail" placeholder="Enter your email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" onclick="redirectToReset()">Reset Password</button>
+                        <p class="mt-3 text-center">
+                            <a href="login.html">Back to Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="forgotPasswordMessageContainer" class="mt-3 text-center"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function showMessage(message) {
+        document.getElementById("forgotPasswordMessageContainer").innerHTML = message;
+    }
+
+    function validateForgotPasswordForm() {
+        var email = document.getElementById('forgotPasswordEmail').value;
+
+        if (email === '') {
+            alert('Please enter your email address.');
+            return false;
+        }
+
+        // Perform the necessary actions for password reset
+        // For demonstration purposes, we'll show a success message
+        showMessage("A password reset link has been sent to your email address.");
+
+        // Prevent the form from submitting (we'll handle it manually)
+        return false;
+    }
+
+    function redirectToReset() {
+        window.location.href = "reset.html";
+    }
+</script>
+
+</body>
+</html>
+

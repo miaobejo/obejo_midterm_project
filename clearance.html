@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barangay Clearance Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button,
+    .home-btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .home-btn {
+      background-color: #37a8ff;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .notification {
+      display: none;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .reference-number {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<form id="clearanceForm">
+  <a href="index.html" class="home-btn">Home</a>
+  <h2>Barangay Clearance Form</h2>
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" name="fullName" required>
+
+  <label for="age">Age:</label>
+  <input type="text" id="age" name="age" required>
+
+  <label for="gender">Gender:</label>
+  <input type="text" id="gender" name="gender" required>
+
+  <label for="contactNumber">Contact Number:</label>
+  <input type="text" id="contactNumber" name="contactNumber" required>
+
+  <label for="pickUpDate">Pick-up Date:</label>
+  <input type="date" id="pickUpDate" name="pickUpDate" required>
+
+  <label for="purpose">Purpose:</label>
+  <textarea id="purpose" name="purpose" rows="4" required></textarea>
+
+  <button type="button" onclick="submitForm()">Submit</button>
+  <div class="notification" id="notification">Form submitted successfully!</div>
+  <div class="reference-number" id="referenceNumber"></div>
+  <div class="status" id="status"></div>
+</form>
+
+<script>
+  function submitForm() {
+    // Perform form submission logic here
+    // ...
+
+    // Generate a reference number (you can replace this with your logic)
+    const referenceNumber = generateReferenceNumber();
+
+    // Update the UI with the reference number and status
+    document.getElementById('referenceNumber').textContent = `Reference Number: ${referenceNumber}`;
+    document.getElementById('status').textContent = 'Status: Processing'; // Initial status
+
+    // Show notification
+    document.getElementById('notification').style.display = 'block';
+
+    // Reference to the makeClearance function (replace this with your actual logic)
+    makeClearance(referenceNumber);
+  }
+
+  function generateReferenceNumber() {
+    // Placeholder for generating a reference number (replace this with your logic)
+    return Math.floor(100000 + Math.random() * 900000);
+  }
+
+  function makeClearance(referenceNumber) {
+    // Placeholder for make clearance logic
+    // Update the status to 'Ready to Pick Up' after processing (you can replace this with your logic)
+    setTimeout(() => {
+      document.getElementById('status').textContent = 'Status: Ready to Pick Up';
+    }, 3000); // Simulating a delay, replace with actual logic
+  }
+</script>
+
+</body>
+</html>

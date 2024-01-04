@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate of Indigency Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button,
+    .home-btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .home-btn {
+      background-color: #37a8ff;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .notification {
+      display: none;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+
+    .reference-number {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+    <form id="certificateForm">
+        <a href="index.html" class="home-btn">Home</a>
+        <h2>Certificate of Indigency Form</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+      
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" readonly>
+      
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+      
+        <label for="purpose">Purpose:</label>
+        <textarea id="purpose" name="purpose" rows="4" required></textarea>
+      
+        <button type="button" onclick="validateAndSubmit()">Submit</button>
+        <div class="notification" id="notification">Form submitted successfully!</div>
+        <div class="reference-number" id="referenceNumber"></div>
+        <div class="status" id="status"></div>
+      
+        <script>
+          function validateAndSubmit() {
+            // Validate the form fields
+            if (validateForm()) {
+              // Perform form submission logic here
+              // ...
+      
+              // Generate a reference number (you can replace this with your logic)
+              const referenceNumber = generateReferenceNumber();
+      
+              // Update the UI with the reference number and status
+              document.getElementById('referenceNumber').textContent = `Reference Number: ${referenceNumber}`;
+              document.getElementById('status').textContent = 'Status: Processing'; // Initial status
+      
+              // Show notification
+              document.getElementById('notification').style.display = 'block';
+      
+              // Reference to the makeAppointment function (replace this with your actual logic)
+              makeAppointment(referenceNumber);
+            }
+          }
+      
+          function validateForm() {
+            // Simple validation for required fields
+            const fullName = document.getElementById('fullName').value.trim();
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+            const address = document.getElementById('address').value.trim();
+            const purpose = document.getElementById('purpose').value.trim();
+      
+            if (!fullName || !dob || !gender || !address || !purpose) {
+              alert('All fields are required. Please fill in all the details.');
+              return false;
+            }
+      
+            // Additional validation logic can be added here
+      
+            return true;
+          }
+      
+          function generateReferenceNumber() {
+            // Placeholder for generating a reference number (replace this with your logic)
+            return Math.floor(100000 + Math.random() * 900000);
+          }
+      
+          function makeAppointment(referenceNumber) {
+            // Placeholder for make appointment logic
+            // Update the status to 'Ready to Pick Up' after processing (you can replace this with your logic)
+            setTimeout(() => {
+              document.getElementById('status').textContent = 'Status: Ready to Pick Up';
+            }, 3000); // Simulating a delay, replace with actual logic
+          }
+      
+          // Calculate age based on date of birth
+          document.getElementById('dob').addEventListener('change', function() {
+            const dob = new Date(this.value);
+            const today = new Date();
+      
+            // Calculate age
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+      
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+              age--;
+            }
+      
+            // Update age field
+            document.getElementById('age').value = age;
+          });
+        </script>
+      </form>
+
+</body>
+</html>
+
+
+

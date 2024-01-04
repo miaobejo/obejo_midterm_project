@@ -48,32 +48,6 @@
         window.location.href = "successfully.html";
     }
 </script>
-<script>
-  function validateForm() {
-      var name = document.getElementById('name').value;
-      var contactNumber = document.getElementById('contactNumber').value;
-      var purpose = document.getElementById('purpose').value;
-      var depart = document.getElementById('depart').value;
-
-      if (name === '' || contactNumber === '' || purpose === '' || depart === '') {
-          alert('Please fill in all required fields.');
-          return false;
-      }
-
-       // Redirect to successfully.html upon successful validation
-       window.location.href = 'successfully.html';
-
-      return false; 
-  }
-  </script>
-  <script>
-    // Activate the carousel
-    $(document).ready(function(){
-      $('.carousel').carousel();
-    });
-  </script>
-
-
   <style>
 
     * {
@@ -82,15 +56,18 @@
       box-sizing: border-box;
       font-family: 'Times New Roman', Times, serif;
     }
+    .section front {
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.60),url(barangay.png));
+    }
     section {
       min-height: 100vh;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(barangay.png);
+      background-image: linear-gradient(rgba(100, 100, 100, 0.6), rgba(0, 0, 0, 0.60));
       background-repeat: no-repeat;
       background-size: cover;
       color: #fff; 
     }
     nav {
-    color: #fff;
+    color: #000000;
     padding: 1em 20px; 
     display: flex;
     justify-content: space-between;
@@ -108,7 +85,8 @@
     }
     h3 {
       margin: 0;
-      line-height: 1.5; 
+      line-height: 1.5;
+       
     }
     ul {
       list-style-type: none;
@@ -166,7 +144,7 @@
     }
     .article p {
       font-size: 18px;
-      color: #7e7e7e;
+      color: #fffefe;
       line-height: 1.5;
       margin-bottom: 50px;
     }
@@ -217,20 +195,9 @@
         text-align: center;
         font-size: 1.2em; 
     }
-    .sibdiv ul {
-        list-style: none; 
-        padding: 0;
-        font-size: 1.3em;
-    }
-    .sibdiv ul li {
-        color: white;
-        list-style: inside; 
-        text-align: center;
-        font-size: 1em; 
-    }
     body {
-        background-color: #333; 
-        color: #fff; 
+        background-color: #848484; 
+        color: #000000; 
         font-family: Arial, sans-serif;
     }
     .form {
@@ -240,50 +207,6 @@
     }
     .transparent-bg {
         background-color: transparent !important;
-    }
-    fieldset {
-        border: 1px solid #fff; 
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 400px;
-        background: none;
-    }
-    legend {
-        font-size: 1.5em;
-        font-weight: bold;
-    }
-    form {
-        display: flex;
-        flex-direction: column;
-    }
-    label {
-        margin-bottom: 8px;
-    }
-    input[type="text"],
-    input[type="date"],
-    select {
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #fff;
-        border-radius: 4px;
-        background-color: #7e7e7e;
-        color: #fff;
-    }
-    input[type="submit"] {
-        background-color: #f15048; 
-        color: #fff;
-        padding: 10px;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    input[type="submit"]:hover {
-        background-color: #45a049; 
-    }
-    .center-button {
-        text-align: center;
     }
     .streets h1{
         color: #fff;
@@ -366,13 +289,12 @@
   </style>
 </head>
 <body>
-
-  <section>
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <section id="front">
+    <div class="container" >
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent" >
         <a class="navbar-brand d-flex align-items-start" href="#">
           <img src="logo.png" alt="logo" class="logo">
-          <h3 class="ml-2">Republic of the Philippines <br> BARANGAY BACAG <br> City of Villasis</h3>
+          <h3 class="ml-2">Republic of the Philippines <br> BARANGAY BACAG <br> Municipality of Villasis</h3>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -384,7 +306,7 @@
             <li class="nav-item"><a class="nav-link text-white" href="#streets">Streets</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#official">Officials</a></li>
             <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
-            <li class="nav-item"><a href="#login" class="btn btn-primary login-btn">Log In</a></li>
+            <li class="nav-item"><a href="login.html" class="btn btn-primary login-btn">Log In</a></li>
           </ul>
         </div>
       </nav>
@@ -393,137 +315,119 @@
         <p>
           Bacag is a barangay in the municipality of Villasis, in the province of Pangasinan. Its population as determined by the 2020 Census was 6,093. This represented 9.37% of the total population of Villasis.
         </p>
-        <a href="#form" class="btn btn-primary">Schedule an Appointment</a>
+        <a href="#welcome" class="btn btn-primary">Get Started</a>
       </div>
     </div>
   </section>
-  <hr>
-    <section class="py-5 bg-light">
-      <div class="container" id="login">
-          <div class="row justify-content-center">
-              <div class="col-md-6">
-                  <h2 class="mb-4 text-center" id="account">Create an Account</h2>
-                  <form onsubmit="return validateSignUpForm()">
-                      <div class="mb-3">
-                          <label for="fullName" class="form-label">Full Name</label>
-                          <input type="text" class="form-control" id="fullName" placeholder="Mia Charife M. Obejo" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="email" class="form-label">Email address</label>
-                          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="password" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="password" placeholder="Password" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="confirmPassword" class="form-label">Confirm Password</label>
-                          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
-                      </div>
-                      <button type="submit" class="btn btn-primary w-100 align-items-center">Sign Up</button>
-                  </form>
-                  <div class="mt-3 text-center">
-                      <p>Already have an account? <a href="login.html">Log In</a></p>
-                  </div>
-              </div>
-          </div>
+    <section id="welcome" class="py-5 bg-white"><br>
+      <div class="container">
+        <div class="alert alert-success" role="alert" style="background-color: white;">
+          <a id="aboutus">
+            <h4 class="alert-heading text-center">WELCOME</h4>
+          <p>&nbsp &nbsp Welcome to Barangay Bacag's digital system, designed to streamline the process of obtaining a Barangay Clearance in the Philippines. This essential document serves as proof of identity, residency, and good behavior within our community. Online appointment scheduling for Barangay Clearance issuance is now available for Bacag residents, providing a convenient and efficient way to access this service. <br><br>
+
+            &nbsp &nbsp Residents can easily schedule appointments from the comfort of their homes or mobile devices, reducing the need for long queues at the Barangay office. This online system helps manage the flow of residents, ensuring an organized and streamlined process. This, in turn, leads to quicker service and less administrative burden on the Barangay office, particularly during times of public health concerns, where minimizing physical contact is crucial. <br><br>
+            
+            Here are the steps to book an appointment: <br><br>
+            
+            Step 1: Access the website and read the instructions on how to book online. <br>
+            
+            Step 2: Select your preferred appointment services.<br>
+            
+            Step 3: Fill out the required personal and service information, then click the SAVE button to confirm your appointment.<br>
+            
+            Step 4: After saving, a notification will appear, and it's important to screenshot it for your appointment code reference.<br><br>
+            
+            Thank you for using our online appointment system. We aim to make the Barangay Clearance issuance process efficient and accessible for all Bacag residents.
+          </p>
+        </div>
       </div>
-    </section>
+    </section>  
 
     <!--Main-->
-    <section>
-      <div class="sibdiv text-center" id="sibdiv" style="background-color: #222; color: #fff; padding: 20px;">
-        <br><br>
-        <h1>BARANGAY BACAG ONLINE APPOINTMENT</h1>
-        <h2 class="offer">Services</h2>
-        <h5>Here are our online appointment services offered</h5>
-        <ul class="d-flex flex-column align-items-center">
-          <li>Certificate of Indigency</li>
-          <li>Barangay Clearance</li>
-        </ul>
-      </div>
-      <br><br>
-      <div class="streets text-center" id="streets">
-        <h1 class="offer">Streets</h1>
-        <h5>Here are the streets of barangay bacag</h5>
-        <p>Bacag Barangay hall is a town hall in Villasis, Pangasinan, Ilocos located on MacArthur Highway. <br>
-          Bacag Barangay hall is situated nearby to the government office Bacag Barangay Council and N.J. Valdez Colleges Foundation.</p>
-        <p>Barangay Bacag beckons with allure, boasting a delightful ensemble of four enchanting streets—Bacag North, Bacag West, Bacag East, and <br> Bacag Sur—inviting residents to explore a tapestry of charm where each avenue unfolds a unique story, weaving together the <br>vibrant essence of a truly captivating community.</p>
-      </div>
-      <div class="container mt-5" style="background-color: #333; padding: 20px;">
-        <div id="carouselExample" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="hall.jpg" class="d-block mx-auto img-thumbnail" style="max-width: 300px;" alt="Slide 1">
-            </div>
-            <div class="carousel-item">
-              <img src="sur.png" class="d-block mx-auto img-thumbnail" style="max-width: 300px;" alt="Slide 2">
-            </div>
-            <div class="carousel-item">
-              <img src="east.png" class="d-block mx-auto img-thumbnail" style="max-width: 300px;" alt="Slide 3">
-            </div>
-            <div class="carousel-item">
-              <img src="west.png" class="d-block mx-auto img-thumbnail" style="max-width: 300px;" alt="Slide 4">
-            </div>
-            <div class="carousel-item">
-              <img src="north.jpg" class="d-block mx-auto img-thumbnail" style="max-width: 300px;" alt="Slide 5">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+      <section id="service" class="text-center">
+        <div class="sibdiv text-center" id="sibdiv" style="background-color: #222; color: #fff; padding: 20px;">
+          <br>
+          <h1>Services</h1>
+          <br>
+          <h5>Here are our online appointment services offered</h5>
         </div>
-      </div>      
-        <hr>
-        <section><br><br>
-          <div class="container form transparent-bg" id="form">
-              <h1>Schedule an Appointment</h1>
+        <div class="container px-4 py-5" id="hanging-icons">
+          <div class="row g-4 py-5 justify-content-center"> <!-- Center the columns -->
+            <div class="col-lg-5 d-flex align-items-start"> <!-- Adjusted column size -->
+              <div>
+                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 100px;"><br><br>
+                <h3 class="fs-2 text-body-emphasis">Certificate of Indigency</h3>
+                <p>View the requirements needed Certificate of Indigency through <br>our online appointment system and acquire now.</p>
+                <a href="indigency.html" class="btn btn-primary">
+                  Proceed
+                </a>
+              </div>
+            </div>
+      
+            <div class="col-lg-5 d-flex align-items-start"> <!-- Adjusted column size -->
+              <div>
+                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 100px;"><br><br>
+                <h3 class="fs-2 text-body-emphasis">Barangay Clearance</h3>
+                <p>View the requirements needed Barangay Clearance through <br>our online appointment system and acquire now.</p>
+                <a href="clearance.html" class="btn btn-primary">
+                  Proceed
+                </a>
+              </div>
+            </div>
           </div>
-          <br><br>
-          <fieldset>
-              <legend>Online appointment form</legend>
-              <section style="background: none;">
-                  <div class="container" id="registration">
-                      <div class="row justify-content-start">
-                          <div class="col-md-6">
-                            <form class="box" action="example.php" method="post" onsubmit="return validateForm()">
-                              <div>
-                                  <label for="name" class="title">Name:</label>
-                                  <input style=width:150%; class="text-center" type="text" id="name" name="name" required>
-                              </div>
-                              <div>
-                                  <label for="contactNumber" class="title">Contact Number:</label>
-                                  <input type="text" id="contactNumber" name="contactNumber" required>
-                              </div>
-                              <div>
-                                  <label for="purpose" class="title">Appointment Purpose:</label>
-                                  <select id="purpose" name="purpose" required>
-                                      <option value="certificate">Certificate of Indigency</option>
-                                      <option value="barangay">Barangay Clearance</option>
-                                      <option value="others">Others</option>
-                                  </select>
-                              </div>
-                              <div>
-                                  <label for="depart" class="title">Date:</label>
-                                  <input type="date" id="depart" name="depart" required>
-                              </div>
-                              <div class="center-button">
-                                  <input type="submit" value="Register" id="submit">
-                              </div>
-                          </form>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-          </fieldset>
-          <br><br><br><br>
+        </div>
       </section>
-      <hr>
+      <section>
+      <div class="streets text-center" id="streets" style="background-color: #222; color: #fff; padding: 20px;">
+        <h1 class="offer">Streets</h1>
+        <br>
+        <h5>Here are the streets of barangay bacag</h5>
+        <p>Barangay Bacag beckons with allure, boasting a delightful ensemble of four enchanting streets—Bacag North, Bacag West, Bacag East, and <br> Bacag Sur—inviting residents to explore a tapestry of charm where each avenue unfolds a unique story, weaving together the <br>vibrant essence of a truly captivating community.</p>
+      </div><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card mb-4" style="background-color:#ffffff;">
+              <div class="card-body text-center">
+                <img src="sur.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3" style="color: #000;">Bacag Sur</h5>
+                <p class="text-muted mb-1" style="color: #000;">
+                  Bacag Sur, nestled along the highway, is a bustling hub featuring diverse businesses like Citihardware, Wilcon, La Corona, Alibaba, and Purina.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card mb-4" style="background-color:#ffffff;">
+              <div class="card-body text-center">
+                <img src="east.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;"><br>
+                <h5 class="my-3" style="color: #000;">Bacag East</h5>
+                <p class="text-muted mb-1" style="color: #000;">Bacag East, anchored by the notable landmark IPI, is a central point where the street are, adding to its accessibility and significance in the area.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card mb-4" style="background-color:#ffffff;">
+              <div class="card-body text-center">
+                <img src="west.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3" style="color: #000;">Bacag West</h5>
+                <p class="text-muted mb-1" style="color: #000;">Bacag West is easily found with a visible sign, and landmarks like the Golden Piggery Farm make it stand out in the area. <br><br> </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card mb-4" style="background-color:#ffffff;">
+              <div class="card-body text-center">
+                <img src="north.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3" style="color: #000;">Bacag North</h5>
+                <p class="text-muted mb-1" style="color: #000;">
+                  Bacag North serves as the counterpart to the Bacag Barangay Hall and Bacag Elementary School, forming a cohesive cluster in the area.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>      
       <section class="main-content">
           <div class="officials-row">
               <ul class="officials-list">
@@ -577,26 +481,23 @@
                 </li>
             </ul>
         </div>
-    </section>
-      <hr><br>
+      </section>
     <!-- About Us Section -->
-    <section id="about" class="about"><br><br>
-      <h2>About Us</h2><br><br>
-      <p>
-          Welcome to the official website of Barangay Bacag. <br>We are dedicated to serving our community.
-      </p>
-      <br>
-      <p>
-          How to connect with us?<br><br>
-          At Barangay Bacag, we value open communication and connection with our community. <br> Whether you have inquiries, concerns, or just want to reach out, we are here for you. <br> You can connect with us through various channels: <br>
-          <ul class="d-flex flex-column align-items-center">
-              <li><img class="icon" src="call.png" alt="Phone Icon"> Phone: <a href="tel:+639476497380">+639476497380</a></li><br>
-              <li><img class="icon" src="location.png" alt="Location Icon"> Location: <a href="https://maps.google.com">
-                Barangay Bacag, Villasis, Pangasinan, Philippines</a></li><br>
-              <li><img class="icon" src="email.png" alt="Email Icon"> Email: <a href="mailto:info@barangaybacag.com">@barangaybacagofficial.com</a></li><br>
-          </ul>
-      </p>
-    </section>
+      <section div class="about text-center" id="about" style="background-color: #222; color: #fff; padding: 20px;">
+        <h2>About Us</h2><br><br>
+        <p>Welcome to the official website of Barangay Bacag. <br>We are dedicated to serving our community.</p>
+        <br>
+        <p>
+            How to connect with us?<br><br>
+            At Barangay Bacag, we value open communication and connection with our community. <br> Whether you have inquiries, concerns, or just want to reach out, we are here for you. <br> You can connect with us through various channels: <br>
+            <ul class="d-flex flex-column align-items-center">
+                <li><img class="icon" src="call.png" alt="Phone Icon"> Phone: <a href="tel:+639476497380">+639476497380</a></li><br>
+                <li><img class="icon" src="location.png" alt="Location Icon"> Location: <a href="https://maps.google.com">
+                  Barangay Bacag, Villasis, Pangasinan, Philippines</a></li><br>
+                <li><img class="icon" src="email.png" alt="Email Icon"> Email: <a href="mailto:info@barangaybacag.com">@barangaybacagofficial.com</a></li><br>
+            </ul>
+        </p>
+      </section>
     <!-- Footer -->
     <footer>
       <hr />

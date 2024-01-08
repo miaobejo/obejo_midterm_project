@@ -74,66 +74,65 @@
   </style>
 </head>
 <body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Barangay Online Appointment</h2>
+  
+    <!-- Appointment Form -->
+    <form id="appointmentForm">
+      <div class="form-group">
+        <label for="serviceType">Select Service:</label>
+        <select class="form-control" id="serviceType" required>
+          <option value="">Choose...</option>
+          <option value="barangayClearance">Barangay Clearance</option>
+          <option value="permits">Certificate of Indigency</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="appointmentDate">Select Date:</label>
+        <input type="date" class="form-control" id="appointmentDate" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="appointmentTime">Select Time:</label>
+        <input type="time" class="form-control" id="appointmentTime" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+  
+    <!-- Display booked appointments -->
+    <div class="mt-5">
+      <h4>Booked Appointments</h4>
+      <ul id="bookedAppointments" class="list-group"></ul>
+    </div>
+  </div>
 
-<form id="clearanceForm">
-  <a href="index.html" class="home-btn">Home</a>
-  <h2>Barangay Clearance Form</h2>
-  <label for="fullName">Full Name:</label>
-  <input type="text" id="fullName" name="fullName" required>
-
-  <label for="age">Age:</label>
-  <input type="text" id="age" name="age" required>
-
-  <label for="gender">Gender:</label>
-  <input type="text" id="gender" name="gender" required>
-
-  <label for="contactNumber">Contact Number:</label>
-  <input type="text" id="contactNumber" name="contactNumber" required>
-
-  <label for="pickUpDate">Pick-up Date:</label>
-  <input type="date" id="pickUpDate" name="pickUpDate" required>
-
-  <label for="purpose">Purpose:</label>
-  <textarea id="purpose" name="purpose" rows="4" required></textarea>
-
-  <button type="button" onclick="submitForm()">Submit</button>
-  <div class="notification" id="notification">Form submitted successfully!</div>
-  <div class="reference-number" id="referenceNumber"></div>
-  <div class="status" id="status"></div>
-</form>
-
-<script>
-  function submitForm() {
-    // Perform form submission logic here
-    // ...
-
-    // Generate a reference number (you can replace this with your logic)
-    const referenceNumber = generateReferenceNumber();
-
-    // Update the UI with the reference number and status
-    document.getElementById('referenceNumber').textContent = `Reference Number: ${referenceNumber}`;
-    document.getElementById('status').textContent = 'Status: Processing'; // Initial status
-
-    // Show notification
-    document.getElementById('notification').style.display = 'block';
-
-    // Reference to the makeClearance function (replace this with your actual logic)
-    makeClearance(referenceNumber);
-  }
-
-  function generateReferenceNumber() {
-    // Placeholder for generating a reference number (replace this with your logic)
-    return Math.floor(100000 + Math.random() * 900000);
-  }
-
-  function makeClearance(referenceNumber) {
-    // Placeholder for make clearance logic
-    // Update the status to 'Ready to Pick Up' after processing (you can replace this with your logic)
-    setTimeout(() => {
-      document.getElementById('status').textContent = 'Status: Ready to Pick Up';
-    }, 3000); // Simulating a delay, replace with actual logic
-  }
-</script>
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Sample JavaScript for handling form submission and displaying booked appointments
+    document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      // Get form values
+      const serviceType = document.getElementById('serviceType').value;
+      const appointmentDate = document.getElementById('appointmentDate').value;
+      const appointmentTime = document.getElementById('appointmentTime').value;
+  
+      // Display booked appointments
+      const bookedAppointments = document.getElementById('bookedAppointments');
+      const listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.textContent = `${serviceType} on ${appointmentDate} at ${appointmentTime}`;
+      bookedAppointments.appendChild(listItem);
+  
+      // Reset form
+      document.getElementById('appointmentForm').reset();
+    });
+  </script>
 </body>
 </html>

@@ -7,29 +7,7 @@
   <title>Bacag Online Appointment System</title>
   <link rel="icon" href="logo.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script>
-    function validateSignUpForm() {
-        var fullName = document.getElementById('fullName').value;
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-        var confirmPassword = document.getElementById('confirmPassword').value;
-
-        if (fullName === '' || email === '' || password === '' || confirmPassword === '') {
-            alert('Please fill in all required fields.');
-            return false;
-        }
-
-        if (password !== confirmPassword) {
-            alert('Password and Confirm Password do not match.');
-            return false;
-        }
-
-        window.location.href = "confirmation.html";
-
-        
-        return false;
-    }
-</script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <script>
     function showConfirmation(event) {
         
@@ -48,268 +26,332 @@
         window.location.href = "successfully.html";
     }
 </script>
-  <style>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Times New Roman', Times, serif;
-    }
-    .section front {
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.60),url(barangay.png));
-    }
-    section {
-      min-height: 100vh;
-      background-image: linear-gradient(rgba(100, 100, 100, 0.6), rgba(0, 0, 0, 0.60));
-      background-repeat: no-repeat;
-      background-size: cover;
-      color: #fff; 
-    }
-    nav {
-    color: #000000;
-    padding: 1em 20px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin-right: 10px;
-      margin-top: 10px;
-    }
-    h3 {
-      margin: 0;
-      line-height: 1.5;
-       
-    }
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    ul li {
-      margin-right: 20px;
-    }
-    ul li:last-child {
-      margin-right: 0;
-    }
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
-    a.active {
-      font-weight: bold;
-    }
-    nav ul li a {
-      background-color: transparent;
-      border-radius: 5px;
-      padding: 7px 8px;
-      transition: background-color 0.3s ease;
-    }
-    nav ul li a:hover {
-      background-color: green;
-    }
-    nav ul li .active {
-      background-color: rgb(255, 166, 0);
-    }
-    .login-btn {
-      background-color: rgb(76, 76, 255); 
-      color: #fff;
-      border-radius: 5px;
-      padding: 7px 15px;
-      text-decoration: none;
-    }
-    .login-btn:hover {
-      background-color: darkblue; 
-    }
-    .article {
-      width: 50%;
-      margin: auto;
-      text-align: center;
-      transform: translateY(25vh);
-    }
-    .article h1 {
-      font-size: 40px;
-      letter-spacing: 1.5px;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    .article p {
-      font-size: 18px;
-      color: #fffefe;
-      line-height: 1.5;
-      margin-bottom: 50px;
-    }
-    .article .btn {
-      padding: 12px 25px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-decoration: none;
-      background-color: #f15048;
-    }
-    .article .btn:hover {
-      background-color: rgb(76, 76, 255);
-      transition: 0.5s ease;
-    }
-    section nav img {
-    width: 100px;
-    float: left;
-    margin-top: -20px;
-    }
-    section nav h3{
-        color: #fff;
-        letter-spacing: 0;
-    }
-    footer {
-        text-align: center;
-        font-size: small;
-        float: right;
-    }
-    .icon{
-        width: 20px;
-    }
-    .sibdiv {
-        background-size: cover;
-    }
-    .sibdiv h1 {
-        color: #fff;
-        text-align: center;
-        font-size: 2em; 
-    }
-    .sibdiv h2 {
-        color: white;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 1.4em;
-    }
-    .sibdiv h5 {
-        color: #7e7e7e;
-        text-align: center;
-        font-size: 1.2em; 
-    }
-    body {
-        background-color: #848484; 
-        color: #000000; 
-        font-family: Arial, sans-serif;
-    }
-    .form {
-        color: #fff;
-        text-align: center;
-        font-size: 2em; 
-    }
-    .transparent-bg {
-        background-color: transparent !important;
-    }
-    .streets h1{
-        color: #fff;
-        text-align: center;
-        font-size: 1.4em;
-        text-transform: uppercase;
-    }
-    .streets h5 {
-        color: #7e7e7e;
-        text-align: center;
-        font-size: 1.2em; 
-    }
-    .main-content {
-        padding: 20px;
-    }
+section#front {
+  min-height: 100vh;
+  background-image: url('barangay.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
 
-    .officials-row {
-        display: flex;
-        justify-content: center;
-    }
-    .officials-list {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .officials-list li {
-        width: 200px;
-        margin: 20px;
-        text-align: center;
-    }
-    .officials-list img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    #about {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-        text-align: center;
-    }
-    #about h2 {
-        font-size: 3em;
-        margin-bottom: 20px;
-    }
-    #about p {
-        font-size: 1.4em;
-    }
-    #about ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    #about li {
-        font-size: 1.3em;
-        margin-bottom: 10px;
-    }
-    #about a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    #about a:hover {
-        text-decoration: underline;
-    }
-    .box {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    .title {
-        font-weight: bold;
-    }
-    .center-button {
-        text-align: center;
-    }
-  </style>
+section#front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+nav.navbar {
+  background-color: red;
+  color: #fff;
+  padding: 1em 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  background-color: green;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+h3 {
+  margin: 0;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  margin-right: 20px;
+}
+
+ul li:last-child {
+  margin-right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+nav ul li a {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 7px 8px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: green;
+}
+
+nav ul li .active {
+  background-color: rgb(255, 166, 0);
+}
+
+.login-btn {
+  background-color: rgb(76, 76, 255);
+  color: #fff;
+  border-radius: 5px;
+  padding: 7px 15px;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-color: darkblue;
+}
+
+.article {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  transform: translateY(25vh);
+}
+
+.article h1 {
+  font-size: 40px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.article p {
+  font-size: 18px;
+  color: #fffefe;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.article .btn {
+  padding: 12px 25px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #f15048;
+}
+
+.article .btn:hover {
+  background-color: rgb(76, 76, 255);
+  transition: 0.5s ease;
+}
+
+section nav img {
+  width: 100px;
+  float: left;
+  margin-top: -20px;
+}
+
+section nav h3 {
+  color: #fff;
+  letter-spacing: 0;
+}
+
+footer {
+  text-align: center;
+  font-size: small;
+  float: right;
+}
+
+.icon {
+  width: 20px;
+}
+
+.sibdiv {
+  background-size: cover;
+}
+
+.sibdiv h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+}
+
+.sibdiv h2 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+
+.sibdiv h5 {
+  color: #7e7e7e;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+body {
+  background-color: #848484;
+  color: #000000;
+  font-family: Arial, sans-serif;
+}
+
+.form {
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+}
+
+.transparent-bg {
+  background-color: transparent !important;
+}
+
+.streets h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.streets h5 {
+  color: #7e7e7e;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.officials-row {
+  display: flex;
+  justify-content: center;
+}
+
+.officials-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.officials-list li {
+  width: 200px;
+  margin: 20px;
+  text-align: center;
+}
+
+.officials-list img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#about {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.4em;
+}
+
+#about ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#about li {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+#about a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#about a:hover {
+  text-decoration: underline;
+}
+
+.box {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.center-button {
+  text-align: center;
+}
+
+.counsilors__img--box img {
+  max-height: 150px;
+  width: auto;
+  height: auto;
+}
+
+</style>
 </head>
 <body>
   <section id="front">
-    <div class="container" >
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent" >
-        <a class="navbar-brand d-flex align-items-start" href="#">
-          <img src="logo.png" alt="logo" class="logo">
-          <h3 class="ml-2">Republic of the Philippines <br> BARANGAY BACAG <br> Municipality of Villasis</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link text-white" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#sibdiv">Services</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#streets">Streets</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#official">Officials</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
-            <li class="nav-item"><a href="login.html" class="btn btn-primary login-btn">Log In</a></li>
-          </ul>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #006400;">
+      <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="logo.png" alt="logo" class="logo" style="width: 60px; height: 60px;">
+              <h3 class="ml-2" style="font-size: 0.8em; color: white; margin: 0;">Republic of the Philippines <br> BARANGAY BACAG <br> Municipality of Villasis</h3>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a class="nav-link text-white" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#sibdiv">Services</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#streets">Streets</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#officials">Officials</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" href="#about">About Us</a></li>
+                  <li class="nav-item"><a href="login.html" class="btn btn-primary login-btn">Log In</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>  
+    <br><br><br><br><br><br>
       <div class="article">
         <h1>Welcome to Barangay Bacag!</h1>
         <p>
@@ -318,7 +360,7 @@
         <a href="#welcome" class="btn btn-primary">Get Started</a>
       </div>
     </div>
-  </section>
+  </section><br><br>
     <section id="welcome" class="py-5 bg-white"><br>
       <div class="container">
         <div class="alert alert-success" role="alert" style="background-color: white;">
@@ -343,7 +385,6 @@
         </div>
       </div>
     </section>  
-
     <!--Main-->
       <section id="service" class="text-center">
         <div class="sibdiv text-center" id="sibdiv" style="background-color: #222; color: #fff; padding: 20px;">
@@ -356,27 +397,16 @@
           <div class="row g-4 py-5 justify-content-center"> <!-- Center the columns -->
             <div class="col-lg-5 d-flex align-items-start"> <!-- Adjusted column size -->
               <div>
-                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 100px;"><br><br>
-                <h3 class="fs-2 text-body-emphasis">Certificate of Indigency</h3>
-                <p>View the requirements needed Certificate of Indigency through <br>our online appointment system and acquire now.</p>
+                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 140px;"><br><br>
+                <h3 class="fs-2 text-body-emphasis">Barangay Appointment </h3><br>
+                <p>Explore the requirements for a Certificate of Indigency through our efficient online appointment system. Take a moment to provide the necessary details in the form below to secure your barangay appointment for both clearance and Certificate of Indigency.</p>
                 <a href="indigency.html" class="btn btn-primary">
                   Proceed
                 </a>
               </div>
             </div>
-      
-            <div class="col-lg-5 d-flex align-items-start"> <!-- Adjusted column size -->
-              <div>
-                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 100px;"><br><br>
-                <h3 class="fs-2 text-body-emphasis">Barangay Clearance</h3>
-                <p>View the requirements needed Barangay Clearance through <br>our online appointment system and acquire now.</p>
-                <a href="clearance.html" class="btn btn-primary">
-                  Proceed
-                </a>
-              </div>
-            </div>
           </div>
-        </div>
+        </div>        
       </section>
       <section>
       <div class="streets text-center" id="streets" style="background-color: #222; color: #fff; padding: 20px;">
@@ -427,61 +457,97 @@
           </div>
         </div>
       </div>
-      </section>      
-      <section class="main-content">
-          <div class="officials-row">
-              <ul class="officials-list">
-                  <li class="chairman">
-                      <img src="kapitan.jpeg" alt="Chairman">
-                      <h3>Punong Barangay</h3>
-                      <p>Padilla, Raul O.</p>
-                  </li>
-              </ul>
+      </section>   
+      <hr><br><br>
+      <section class="main-content" id="officials">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="section-title theme-border text-center mb-75">
+                    <h5 class="left_line" style="color: rgb(251, 255, 40);">Barangay Bacag</h5>
+                    <h2 style="color: rgb(251, 255, 40);"><b>Meet Our Barangay Officials</b></h2>
+                </div>
+            </div>
+          </div><br><br>        
+            <div class="row justify-content-center">
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="kapitan.jpeg" alt="avatar" class="img-fluid" style="width: 180px;">
+                          <h5 class="my-3"><b>Padilla, Raul O.</b></h5>
+                          <p class="mb-0">Brgy. Captain</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="bae.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Padilla, Basilisa M.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="bong.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Mortera, Bongbong M.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="pong.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Lucena, Aresto S.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="officials-row" id="official">
-            <ul class="officials-list">
-                <li>
-                    <img src="bae.jpeg" alt="Official 2">
-                    <h3>Kagawad</h3>
-                    <p>Padilla, Basilisa M.</p>
-                </li>
-                <li>
-                    <img src="bong.jpeg" alt="Official 3">
-                    <h3>Kagawad</h3>
-                    <p>Mortera, Bongbong M.</p>
-                </li>
-                <li>
-                    <img src="pong.jpeg" alt="Official 4">
-                    <h3>Kagawad</h3>
-                    <p>Lucena, Aresto S.</p>
-                </li>
-            </ul>
+          <div class="row justify-content-center">
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="ama.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Dingle, Gervacio R.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="alex.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Lopez, Alexander O.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="charito.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Dizon, Charito M.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3">
+                  <div class="card mb-5" style="background-color:#ffffff;">
+                      <div class="card-body text-center" style="height: 350px;">
+                          <img src="manolo.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
+                          <h5 class="my-3"><b>Labiste, Manolo S.</b></h5>
+                          <p class="mb-0">Brgy. Kagawad</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
-        <div class="officials-row">
-            <ul class="officials-list">
-                <li>
-                    <img src="ama.jpeg" alt="Official 5">
-                    <h3>Kagawad</h3>
-                    <p>Dingle, Gervacio R.</p>
-                </li>
-                <li>
-                    <img src="alex.jpeg" alt="Official 6">
-                    <h3>Kagawad</h3>
-                    <p>Lopez, Alexander O.</p>
-                </li>
-                <li>
-                    <img src="charito.jpeg" alt="Official 7">
-                    <h3>Kagawad</h3>
-                    <p>Dizon, Charito M.</p>
-                </li>
-                <li>
-                    <img src="manolo.jpeg" alt="Official 7">
-                    <h3>Kagawad</h3>
-                    <p>Labiste, Manolo S.</p>
-                </li>
-            </ul>
-        </div>
-      </section>
+    </section>
+    <hr>
     <!-- About Us Section -->
       <section div class="about text-center" id="about" style="background-color: #222; color: #fff; padding: 20px;">
         <h2>About Us</h2><br><br>
@@ -508,20 +574,8 @@
         <img class="icon" src="sk.png" alt="sk" />
       </p>
     </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
 </body>
 </html>

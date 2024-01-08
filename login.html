@@ -31,7 +31,7 @@
                             <input type="checkbox" class="form-check-input" id="rememberMe">
                             <label class="form-check-label" for="rememberMe">Remember Me</label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block"><a href="admin.html">Login</a></button>
                         <p class="mt-2 text-center">
                             <a href="forgot.html">Forgot Password?</a>
                         </p>
@@ -53,37 +53,30 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    function showMessage(message) {
-        document.getElementById("messageContainer").innerHTML = message;
+    function checkLogin() {
+   
+    var emailInput = document.getElementById("loginEmail");
+    var passwordInput = document.getElementById("loginPassword");
+                          
+  
+    var emailValue = emailInput.value;
+    var passwordValue = passwordInput.value;
+                          
+   
+    if (emailValue === "admin" && passwordValue === "2345") {
+    alert("Login successful!");
+    window.location.href = "admin.html";
+   
     }
+    else if (emailValue === "client" && passwordValue === "6789") {
+    alert("Login successful!");
+    window.location.href = "services.html";
 
-    function validateLoginForm() {
-        var email = document.getElementById('loginEmail').value;
-        var password = document.getElementById('loginPassword').value;
-
-        if (!checkPasswordMatch(email, password)) {
-            document.getElementById('passwordMismatch').innerHTML = 'Incorrect password. Please try again.';
-            return false;
-        } else {
-            document.getElementById('passwordMismatch').innerHTML = ''; // Clear the error message
-        }
-
-        // If validation passes, proceed to form submission
-        showMessage("You have successfully logged in! You can now schedule your appointment.");
-
-        // Prevent the form from submitting (we'll handle it manually)
-        return false;
+    } else {
+    alert("Invalid email or password. Please try again.");
     }
-
-    // Function to check if the entered password matches the reset password
-    function checkPasswordMatch(email, enteredPassword) {
-        // In a real scenario, you would query your database to get the stored password for the given email
-        // For demonstration purposes, let's assume the stored password is "resetPassword123"
-        var storedPassword = "resetPassword123";
-
-        return enteredPassword === storedPassword;
-    }
-</script>
+  }                            
+  </script>
 
 </body>
 </html>

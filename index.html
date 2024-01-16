@@ -31,7 +31,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 section#front {
@@ -180,7 +180,7 @@ section nav h3 {
 footer {
   text-align: center;
   font-size: small;
-  float: right;
+  float: center;
 }
 
 .icon {
@@ -205,15 +205,15 @@ footer {
 }
 
 .sibdiv h5 {
-  color: #7e7e7e;
+  color: #ffffff;
   text-align: center;
   font-size: 1.2em;
 }
 
 body {
-  background-color: #848484;
+  background-color: #ffffff;
   color: #000000;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .form {
@@ -227,14 +227,12 @@ body {
 }
 
 .streets h1 {
-  color: #fff;
+  color: green;
   text-align: center;
-  font-size: 1.4em;
-  text-transform: uppercase;
 }
 
 .streets h5 {
-  color: #7e7e7e;
+  color: #ffffff;
   text-align: center;
   font-size: 1.2em;
 }
@@ -270,8 +268,8 @@ body {
 }
 
 #about {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #132540;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
@@ -298,7 +296,7 @@ body {
 }
 
 #about a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
 }
@@ -325,7 +323,182 @@ body {
   width: auto;
   height: auto;
 }
+#scrollUp {
+    background: rgba(0, 128, 0, 0.567);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+}
+a, button {
+    color: inherit;
+    outline: medium none;
+}
+a:-webkit-any-link {
+    color: white
+}
+a, .button {
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+        .container-fluid {
+            background-color: #006400;
+            color: #fff;
+            padding: 20px;
+            position: relative;
+        }
 
+        .logo {
+            width: 150px;
+            height: 150px;
+        }
+
+        .contact-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .contact-details li {
+            margin-bottom: 20px;
+            
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .background-image {
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .flex-responsive {
+            display: flex;
+            flex-direction: column;
+            align-items: right;
+            justify-content: center;
+            text-align: center;
+        }
+        hr {
+            display: block;
+            unicode-bidi: isolate;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 1px;
+        }
+        .home-content-hr {
+            border-top: 6px solid green;
+            opacity: 1;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem!important;
+        }
+        hr {
+            margin: 1rem 0;
+            color: inherit;
+            border: 0;
+            border-top: 1px solid;
+            opacity: .25;
+        } 
+        .bacag-card-holder[_ngcontent-grh-c74] {
+            padding: 60px 0 0;
+        }
+        .home-cont {
+            overflow: hidden;
+        }
+        .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            width: 100%;
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            margin-right: auto;
+            margin-left: auto;
+            font-family: 'Roboto', sans-serif;
+        }
+          .row {
+          --bs-gutter-x: 1.5rem;
+          --bs-gutter-y: 0;
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: calc(-1 * var(--bs-gutter-y));
+          margin-right: calc(-.5 * var(--bs-gutter-x));
+          margin-left: calc(-.5 * var(--bs-gutter-x));
+        }
+        .left_line::before {
+            content: '';
+            position: absolute;
+            background: green;
+            left: 0;
+            top: 9px;
+            width: 40px;
+            height: 2px;
+            z-index: 1;
+            -webkit-transition: all 0.3s ease-out 0s;
+            -moz-transition: all 0.3s ease-out 0s;
+            -ms-transition: all 0.3s ease-out 0s;
+            -o-transition: all 0.3s ease-out 0s;
+            transition: all 0.3s ease-out 0s;
+        }
+        .section-title h6 {
+            color: #3a3d3e;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.1;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .section-title h2 {
+            color: #3a3d3e;
+            font-size: 48px;
+            line-height: 1.3;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: -0.3px;
+        }
+        h6 {
+            font-size: 16px;
+        }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        .d-block {
+            display: block!important;
+        }
+        .img-fluid {
+            width: auto;
+            height: auto;
+        }
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
 </style>
 </head>
 <body>
@@ -334,7 +507,7 @@ body {
       <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="#">
               <img src="logo.png" alt="logo" class="logo" style="width: 60px; height: 60px;">
-              <h3 class="ml-2" style="font-size: 0.8em; color: white; margin: 0;">Republic of the Philippines <br> BARANGAY BACAG <br> Municipality of Villasis</h3>
+              <h3 class="ml-2" style="font-size: 0.8em; color: white; margin: 0;">Republic of the Philippines <br> <b>BARANGAY BACAG</b> <br> Municipality of Villasis</h3>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -360,13 +533,59 @@ body {
         <a href="#welcome" class="btn btn-primary">Get Started</a>
       </div>
     </div>
-  </section><br><br>
+  </section><br>
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-12 col-lg-6">
+        <img src="cap.jpeg" class="d-block mx-lg-auto img-fluid" alt="Cap" width="600" height="500" loading="lazy">
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="section-title mb-3 mb-lg-4">
+          <h6 class="left_line">&nbsp &nbsp &nbsp &nbsp Barangay Captain</h6>
+          <h2 class="align-items-left">&nbsp Raul O. Padilla</h2>
+        </div>
+        <h2 class="mb-4 align-items-center">"Pagmamahal at serbisyo sa bawat barangay."</h2>
+        <p class="lead">&nbsp Barangay Captain Raul O. Padilla has been dedicatedly serving the community since 2018, actively advocating for the welfare and progress of the residents. Barangay Captain Raul O. Padilla, with a strong commitment to public service, tirelessly works to address the needs and concerns of the community. His leadership is characterized by a deep sense of responsibility, transparency, and a genuine desire to enhance the well-being of the residents. Through his service, Barangay Captain Raul O. Padilla continues to contribute to the betterment of the community he serves.</p>
+      </div>
+    </div>
+  </div>  
+  <br>
+  <app-bacag-cards _ngcontent-mdw-c79="" _nghost-mdw-c74="">
+    <div _ngcontent-mdw-c74="" class="container bacag-card-holder home-cont">
+      <div _ngcontent-mdw-c74="" class="row banner-holder">
+        <div _ngcontent-mdw-c74="" class="col-lg-4 mb-4">
+          <div _ngcontent-mdw-c74="" class="bacag-card d-flex" style="background-color: rgba(0, 128, 0, 0.567); height: 500px;">
+            <div _ngcontent-mdw-c74="" class="d-flex align-items-center flex-column m-auto">
+              <div _ngcontent-mdw-c74="" class="d-flex align-items-center flex-column text-white bacag-card-title"><img src="mission.png" alt="mission" style="width: 200px; height: 200px;"><br><b id="mission" style="font-size: 28px;">MISSION</b></div><br>
+              <p class="text-center mb-30">A Barangay that prioritizes a God-centered approach, competence, orderliness, honesty, peace, credibility, gender responsiveness, and adherence to the Code of Conduct.</p><br><br>
+            </div>
+          </div>
+        </div>
+        <div _ngcontent-mdw-c74="" class="col-lg-4 mb-4">
+          <div _ngcontent-mdw-c74="" class="bacag-card d-flex" style="background-color: rgba(0, 128, 0, 0.567); height: 500px;">
+            <div _ngcontent-mdw-c74="" class="d-flex align-items-center flex-column m-auto">
+              <div _ngcontent-mdw-c74="" class="d-flex align-items-center flex-column text-white bacag-card-title"><img src="vision.png" alt="vision" style="width: 200px; height: 200px;"><br><b id="vision" style="font-size: 28px;">VISION</b></div><br>
+              <p class="text-center mb-30">We uphold transparency, integrity, professionalism, and efficiency in our actions. Our commitment extends to providing free services as Public Servants, recognizing our accountability to the residents of Barangay Bacag.</p>
+            </div>
+          </div>
+        </div>
+        <div _ngcontent-mdw-c74="" class="col-lg-4 mb-4">
+          <div _ngcontent-mdw-c74="" class="bacag-card d-flex" style="background-color: rgba(0, 128, 0, 0.567); height: 500px;">
+            <div _ngcontent-mdw-c74="" class="d-flex align-items-center flex-column m-auto">
+              <div _ngcontent-mdw-c74="" class="d-flex align-items-center flex-column text-white bacag-card-title"><br><img src="goal.png" alt="goal" style="width: 200px; height: 200px;"><br><b id="goal" style="font-size: 28px;">GOALS</b></div><br>
+              <p class="text-center mb-30">Barangay Bacag aims to be efficient in serving the public because Public Office is a Public <br> Trust and must at all times be accountable to <br> the people, serve them with utmost <br>responsibility, loyalty and efficiency, act <br> with patriotism and justice and lead modest lives.</p><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-bacag-cards>
     <section id="welcome" class="py-5 bg-white"><br>
       <div class="container">
         <div class="alert alert-success" role="alert" style="background-color: white;">
           <a id="aboutus">
-            <h4 class="alert-heading text-center">WELCOME</h4>
-          <p>&nbsp &nbsp Welcome to Barangay Bacag's digital system, designed to streamline the process of obtaining a Barangay Clearance in the Philippines. This essential document serves as proof of identity, residency, and good behavior within our community. Online appointment scheduling for Barangay Clearance issuance is now available for Bacag residents, providing a convenient and efficient way to access this service. <br><br>
+            <h4 class="alert-heading text-center"><b>GUIDELINES</b></h4>
+          <p style="color: #000;">&nbsp &nbsp Welcome to Barangay Bacag's digital system, designed to streamline the process of obtaining a Barangay Clearance in the Philippines. This essential document serves as proof of identity, residency, and good behavior within our community. Online appointment scheduling for Barangay Clearance issuance is now available for Bacag residents, providing a convenient and efficient way to access this service. <br><br>
 
             &nbsp &nbsp Residents can easily schedule appointments from the comfort of their homes or mobile devices, reducing the need for long queues at the Barangay office. This online system helps manage the flow of residents, ensuring an organized and streamlined process. This, in turn, leads to quicker service and less administrative burden on the Barangay office, particularly during times of public health concerns, where minimizing physical contact is crucial. <br><br>
             
@@ -387,18 +606,18 @@ body {
     </section>  
     <!--Main-->
       <section id="service" class="text-center">
-        <div class="sibdiv text-center" id="sibdiv" style="background-color: #222; color: #fff; padding: 20px;">
+        <div class="sibdiv text-center" id="sibdiv" style="background-color: #006400; color: #fff; padding: 20px;">
           <br>
-          <h1>Services</h1>
+          <h1><b>Services</b></h1>
           <br>
-          <h5>Here are our online appointment services offered</h5>
+          <h5>ONLINE DOCUMENTS OFFERED</h5>
         </div>
         <div class="container px-4 py-5" id="hanging-icons">
           <div class="row g-4 py-5 justify-content-center"> <!-- Center the columns -->
             <div class="col-lg-5 d-flex align-items-start"> <!-- Adjusted column size -->
               <div>
-                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 140px;"><br><br>
-                <h3 class="fs-2 text-body-emphasis">Barangay Appointment </h3><br>
+                <img src="certificate.png" alt="Icon Image" class="img-fluid mt-3" style="max-width: 140px;"><br>
+                <h3 class="fs-2 text-body-emphasis">Barangay Appointment</h3><br>
                 <p>Explore the requirements for a Certificate of Indigency through our efficient online appointment system. Take a moment to provide the necessary details in the form below to secure your barangay appointment for both clearance and Certificate of Indigency.</p>
                 <a href="indigency.html" class="btn btn-primary">
                   Proceed
@@ -409,11 +628,13 @@ body {
         </div>        
       </section>
       <section>
-      <div class="streets text-center" id="streets" style="background-color: #222; color: #fff; padding: 20px;">
-        <h1 class="offer">Streets</h1>
-        <br>
+      <div class="streets text-center" id="streets" style="color: #000000; padding: 20px;">
+        <div class="container">
+        <h1 class="offer"><b>Streets</b></h1>
+        <hr _ngcontent-mdw-c75="" class="home-content-hr mb-4">
         <h5>Here are the streets of barangay bacag</h5>
-        <p>Barangay Bacag beckons with allure, boasting a delightful ensemble of four enchanting streets—Bacag North, Bacag West, Bacag East, and <br> Bacag Sur—inviting residents to explore a tapestry of charm where each avenue unfolds a unique story, weaving together the <br>vibrant essence of a truly captivating community.</p>
+        <p>Barangay Bacag beckons with allure, boasting a delightful ensemble of four enchanting streets—Bacag North, Bacag West, Bacag East, and <br> Bacag Sur—inviting residents to explore a tapestry of charm where each avenue unfolds a unique story, weaving together the <br>vibrant essence of a truly captivating community.</p>          
+        </div>
       </div><br>
       <div class="container">
         <div class="row">
@@ -421,7 +642,7 @@ body {
             <div class="card mb-4" style="background-color:#ffffff;">
               <div class="card-body text-center">
                 <img src="sur.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3" style="color: #000;">Bacag Sur</h5>
+                <h5 class="my-3" style="color: #000;"><b>Bacag Sur</b></h5>
                 <p class="text-muted mb-1" style="color: #000;">
                   Bacag Sur, nestled along the highway, is a bustling hub featuring diverse businesses like Citihardware, Wilcon, La Corona, Alibaba, and Purina.</p>
               </div>
@@ -431,7 +652,7 @@ body {
             <div class="card mb-4" style="background-color:#ffffff;">
               <div class="card-body text-center">
                 <img src="east.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;"><br>
-                <h5 class="my-3" style="color: #000;">Bacag East</h5>
+                <h5 class="my-3" style="color: #000;"><b>Bacag East</b></h5>
                 <p class="text-muted mb-1" style="color: #000;">Bacag East, anchored by the notable landmark IPI, is a central point where the street are, adding to its accessibility and significance in the area.</p>
               </div>
             </div>
@@ -440,8 +661,8 @@ body {
             <div class="card mb-4" style="background-color:#ffffff;">
               <div class="card-body text-center">
                 <img src="west.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3" style="color: #000;">Bacag West</h5>
-                <p class="text-muted mb-1" style="color: #000;">Bacag West is easily found with a visible sign, and landmarks like the Golden Piggery Farm make it stand out in the area. <br><br> </p>
+                <h5 class="my-3" style="color: #000;"><b>Bacag West</b></h5>
+                <p class="text-muted mb-1" style="color: #000;">Bacag West is easily found with a visible sign, and landmarks like the Golden Piggery Farm make it stand out in the area. <br> </p>
               </div>
             </div>
           </div>
@@ -449,7 +670,7 @@ body {
             <div class="card mb-4" style="background-color:#ffffff;">
               <div class="card-body text-center">
                 <img src="north.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3" style="color: #000;">Bacag North</h5>
+                <h5 class="my-3" style="color: #000;"><b>Bacag North</b></h5>
                 <p class="text-muted mb-1" style="color: #000;">
                   Bacag North serves as the counterpart to the Bacag Barangay Hall and Bacag Elementary School, forming a cohesive cluster in the area.</p>
               </div>
@@ -458,24 +679,25 @@ body {
         </div>
       </div>
       </section>   
-      <hr><br><br>
+      <br><br>
       <section class="main-content" id="officials">
         <div class="container">
           <div class="row">
             <div class="col-xl-6 offset-xl-3">
                 <div class="section-title theme-border text-center mb-75">
-                    <h5 class="left_line" style="color: rgb(251, 255, 40);">Barangay Bacag</h5>
-                    <h2 style="color: rgb(251, 255, 40);"><b>Meet Our Barangay Officials</b></h2>
+                    <h5 style="color: green;"><b>Barangay Bacag</b></h5>
+                    <h2 style="color: green;"><b>Meet our Officials</b></h2>
                 </div>
             </div>
-          </div><br><br>        
+          </div>
+          <hr _ngcontent-mdw-c75="" class="home-content-hr mb-4"><br><br>      
             <div class="row justify-content-center">
               <div class="col-lg-3">
                   <div class="card mb-5" style="background-color:#ffffff;">
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="kapitan.jpeg" alt="avatar" class="img-fluid" style="width: 180px;">
                           <h5 class="my-3"><b>Padilla, Raul O.</b></h5>
-                          <p class="mb-0">Brgy. Captain</p>
+                          <p class="mb-0"><i>Brgy. Kapitan</i></p>
                       </div>
                   </div>
               </div>
@@ -484,7 +706,7 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="bae.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Padilla, Basilisa M.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
@@ -493,7 +715,7 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="bong.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Mortera, Bongbong M.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
@@ -502,7 +724,7 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="pong.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Lucena, Aresto S.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
@@ -513,7 +735,7 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="ama.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Dingle, Gervacio R.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
@@ -522,7 +744,7 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="alex.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Lopez, Alexander O.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
@@ -531,7 +753,7 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="charito.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Dizon, Charito M.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
@@ -540,33 +762,96 @@ body {
                       <div class="card-body text-center" style="height: 350px;">
                           <img src="manolo.jpeg" alt="avatar" class="img-fluid" style="width: 180px; height: 207.98px;">
                           <h5 class="my-3"><b>Labiste, Manolo S.</b></h5>
-                          <p class="mb-0">Brgy. Kagawad</p>
+                          <p class="mb-0"><i>Brgy. Kagawad</i></p>
                       </div>
                   </div>
               </div>
           </div>
         </div>
     </section>
-    <hr>
     <!-- About Us Section -->
-      <section div class="about text-center" id="about" style="background-color: #222; color: #fff; padding: 20px;">
-        <h2>About Us</h2><br><br>
-        <p>Welcome to the official website of Barangay Bacag. <br>We are dedicated to serving our community.</p>
-        <br>
-        <p>
-            How to connect with us?<br><br>
-            At Barangay Bacag, we value open communication and connection with our community. <br> Whether you have inquiries, concerns, or just want to reach out, we are here for you. <br> You can connect with us through various channels: <br>
-            <ul class="d-flex flex-column align-items-center">
-                <li><img class="icon" src="call.png" alt="Phone Icon"> Phone: <a href="tel:+639476497380">+639476497380</a></li><br>
-                <li><img class="icon" src="location.png" alt="Location Icon"> Location: <a href="https://maps.google.com">
-                  Barangay Bacag, Villasis, Pangasinan, Philippines</a></li><br>
-                <li><img class="icon" src="email.png" alt="Email Icon"> Email: <a href="mailto:info@barangaybacag.com">@barangaybacagofficial.com</a></li><br>
-            </ul>
-        </p>
+        <section class="team-biography-area pb-30 text-left" id="about">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-12">
+                      <div class="biographs">
+                          <h3 class="biographs-title">History of Barangay Bacag</h3><br>
+                          <div class="biographs__content">
+                              <span>
+                                  During the Spanish time, this barangay is the only place where a big rice mill is found where residents of the nearby barrios mill their palay into rice.
+                                  The name <b>“Bacag”</b> is derived from a local version of the word rice mill.<br><br>
+                                  Bacag was originally named <b>“Bangkag”</b> an Ilocano word meaning <b>“Piece of Land”</b> because according to the elders and legitimate residents of this place, the area looks like a circle island.
+                                  The time it was named Molino IV when, in 1991, through a Congressional Act, considering the increase of its population, it was divided into seven (4) Barangays and they named it in direction.<br><br>
+                                  The first Election was held in 2013 wherein Marion Reduque Mina was proclaimed as winner based on the 1987 Philippine Constitution. He was then called the <b>“Punong Barangay”</b> by the Local Government Code of 1991, who completed three (3) terms until 2018, succeeded by the then elected Raul O. Padilla who served for two (2) terms until 2020, until a the <b>“Punong Barangay”</b> was re-elected on 2020 Barangay Election in the person of <b>Raul O. Padilla</b>. <br><br>
+                              </span>
+                              <span>
+                                  Bacag is situated at approximately 15.9309, 120.5809, in the island of Luzon. Elevation at these coordinates is estimated at 29.6 meters or 97.1 feet above mean sea level.
+                                  The household population of Bacag in the 2015 Census was 5,914 broken down into 1,321 households or an average of 4.48 members per household. The population of Bacag grew from 4,595 in 1990 to 6,093 in 2020, an increase of 1,498 people over the course of 30 years. The latest census figures in 2020 denote a positive growth rate of 0.63%, or an increase of 179 people, from the previous population of 5,914 in 2015.<br><br>
+                                  The main source of income and livelihood before of its residents were farming, fishing, animal raising, and gathering firewoods making it into charcoals and selling it to markets.<br><br>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </section>
     <!-- Footer -->
     <footer>
-      <hr />
+      <div class="container-fluid">
+        <div class="row">
+            <!-- Column 1: Logo -->
+            <div class="col-6 d-flex align-items-center justify-content-center mb-3">
+                <img class="logo" src="logo.png" alt="logo">
+            </div>
+    
+            <!-- Column 2: Contact Section -->
+            <div class="col-6 contact-section d-flex align-items-center justify-content-center mb-3">
+              <h3>How to Contact Us?</h3><br><br>
+              <div class="row">
+                  <ul class="contact-details">
+                      <li>
+                          <div class="container">
+                              <img class="icon" src="call.png" alt="Phone Icon">
+                              <a href="tel:+639476497380">+639476497380</a>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="container">
+                              <img class="icon" src="location.png" alt="Location Icon">
+                              <a href="https://maps.google.com">2427 Bacag, Villasis, Pangasinan, Philippines</a>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="container">
+                              <img class="icon" src="email.png" alt="Email Icon">
+                              <a href="mailto:info@barangaybacag.com">@barangaybacagofficial.com</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <div class="social-icons">
+                <ul class="list-unstyled d-flex">
+                    <li class="me-3">
+                        <a href="https://web.facebook.com/profile.php?id=100070315448588" target="_blank">
+                            <img class="icon" src="facebook.png" alt="Facebook Icon">
+                        </a>
+                    </li>
+                    <li class="me-3">
+                        <a href="https://www.youtube.com/watch?v=aG_P6SPVyGk" target="_blank">
+                            <img class="icon" src="youtube.png" alt="YouTube Icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img class="icon" src="twitter.png" alt="Twitter Icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+      <hr/>
       <p>
         Copyright &copy; 2023 Official Website of Barangay Bacag
         <img class="icon" src="logo.png" alt="logo" />
@@ -576,6 +861,7 @@ body {
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;">🡹</a>
 </body>
 </html>
